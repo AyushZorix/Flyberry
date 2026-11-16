@@ -214,9 +214,9 @@ function sellerPanel(it, currency) {
         s === best && h('span', { class: 'tag good' }, 'Lowest'),
         s.fare && h('div', { class: 'seller-fare' }, s.fare)),
       h('div', { class: 'seller-price' }, s.price != null ? formatPrice(s.price, currency) : 'See site'),
-      s.requests.length
+      h('div', { class: 'seller-actions' }, s.requests.length
         ? s.requests.map((r) => h('button', { class: 'book small', onclick: () => openBooking(r) }, r.label ? `Book ${r.label.toLowerCase()}` : 'Book'))
-        : h('span', { class: 'seller-fare' }, s.phone ? `Call ${s.phone}` : '')),
+        : h('span', { class: 'seller-fare' }, s.phone ? `Call ${s.phone}` : ''))),
     ),
   );
 }
