@@ -1,4 +1,4 @@
-# Flightyy - Cheapest Flight Finder
+# FlightBerry - Cheapest Flight Finder
 
 A Chrome / Brave extension that searches live flight prices, shows the cheapest option first, and notifies you when a route you are watching gets cheaper.
 
