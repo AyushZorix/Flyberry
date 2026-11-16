@@ -15,6 +15,7 @@
     <nav class="tabs" role="tablist">
       <button id="tab-search" class="tab active" role="tab" aria-selected="true">Search</button>
       <button id="tab-watching" class="tab" role="tab" aria-selected="false">Watching <span id="watch-count" class="count" hidden></span></button>
+      <button id="tab-settings" class="tab" role="tab" aria-selected="false">Settings</button>
     </nav>
     <button id="open-tab" class="icon-btn" title="Open in a full tab" aria-label="Open in a full tab">&#x2197;</button>
   </header>
@@ -94,6 +95,24 @@
         <button id="check-now" class="secondary">Check all now</button>
       </div>
       <div id="watch-list"></div>
+    </section>
+    <section id="view-settings" hidden>
+      <div class="card">
+        <h2 class="set-title">Prices by seller</h2>
+        <p class="hint">Without a key, prices come from Kiwi.com. Add a free Google Flights data key and each flight also shows what MakeMyTrip, Cleartrip, ixigo, the airline and other sellers charge, with the lowest marked.</p>
+        <ol class="steps">
+          <li>Create a free account at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener noreferrer">serpapi.com</a>.</li>
+          <li>Copy "Your Private API Key" from its dashboard.</li>
+          <li>Paste it below and press Save.</li>
+        </ol>
+        <form id="key-form" class="key-row" autocomplete="off">
+          <input id="serp-key" type="password" placeholder="Paste API key" aria-label="SerpApi API key" spellcheck="false">
+          <button id="save-key" class="primary slim" type="submit">Save</button>
+        </form>
+        <div id="key-status" class="key-status" role="status" aria-live="polite" hidden></div>
+        <button id="remove-key" class="linklike left" hidden>Remove key</button>
+        <p class="hint">The free plan allows 250 searches a month. Each flight search here uses 2 (3 for a return trip), and each extra "Compare sellers" click uses 1 (2 for a return trip). The key is stored only in this browser and is sent only to serpapi.com.</p>
+      </div>
     </section>
   </main>
 
