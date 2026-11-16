@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flightyy</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="icons/icon48.png" alt="" width="22" height="22">
+      <span>Flightyy</span>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button id="tab-search" class="tab active" role="tab" aria-selected="true">Search</button>
+      <button id="tab-watching" class="tab" role="tab" aria-selected="false">Watching <span id="watch-count" class="count" hidden></span></button>
+    </nav>
+    <button id="open-tab" class="icon-btn" title="Open in a full tab" aria-label="Open in a full tab">&#x2197;</button>
+  </header>
+
+  <main>
+    <section id="view-search">
+      <form id="search-form" autocomplete="off">
+        <div class="route">
+          <label class="field">
+            <span>From</span>
+            <input id="from" list="places" placeholder="City or airport" required>
+          </label>
+          <button type="button" id="swap" class="icon-btn swap" title="Swap From and To" aria-label="Swap From and To">&#x21C4;</button>
+          <label class="field">
+            <span>To</span>
+            <input id="to" list="places" placeholder="City or airport" required>
+          </label>
+        </div>
+        <datalist id="places"></datalist>
+
+        <div class="row two">
+          <label class="field">
+            <span>Depart</span>
+            <input id="depart" type="date" required>
+          </label>
+          <label class="field">
+            <span>Return <em>(optional)</em></span>
+            <input id="ret" type="date">
+          </label>
+        </div>
+
+        <div class="row three">
+          <label class="field">
+            <span>Travellers</span>
+            <select id="adults">
+              <option value="1">1 adult</option><option value="2">2 adults</option>
+              <option value="3">3 adults</option><option value="4">4 adults</option>
+              <option value="5">5 adults</option><option value="6">6 adults</option>
+              <option value="7">7 adults</option><option value="8">8 adults</option>
+              <option value="9">9 adults</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Cabin</span>
+            <select id="cabin">
+              <option value="M">Economy</option>
+              <option value="W">Premium economy</option>
+              <option value="C">Business</option>
+              <option value="F">First</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Currency</span>
+            <select id="currency">
+              <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option>
+              <option>AED</option><option>SGD</option><option>AUD</option><option>CAD</option>
+              <option>THB</option><option>JPY</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="checks">
+          <label class="check"><input id="direct" type="checkbox"> Non-stop only</label>
+          <label class="check"><input id="flex" type="checkbox"> Flexible dates (&plusmn;3 days)</label>
+        </div>
+
+        <button id="search-btn" class="primary" type="submit">Find cheapest flights</button>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+      <div id="results" hidden></div>
+    </section>
+
+    <section id="view-watching" hidden>
+      <div class="watch-head">
+        <p class="hint">Watched routes are re-checked about every 3 hours while your browser is open. You get a notification when a price drops or reaches your target.</p>
+        <button id="check-now" class="secondary">Check all now</button>
+      </div>
+      <div id="watch-list"></div>
+    </section>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

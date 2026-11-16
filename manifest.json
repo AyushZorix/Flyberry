@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Flightyy - Cheapest Flight Finder",
+  "short_name": "Flightyy",
+  "version": "1.0.0",
+  "description": "Search live flight prices, see the cheapest option first, and get notified when a watched route gets cheaper.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Flightyy - find the cheapest flight",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "alarms", "notifications"],
+  "host_permissions": ["https://mcp.kiwi.com/*"]
+}
