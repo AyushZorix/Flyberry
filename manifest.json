@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Flightyy - Cheapest Flight Finder",
-  "short_name": "Flightyy",
+  "name": "FlightBerry - Cheapest Flight Finder",
+  "short_name": "FlightBerry",
   "version": "1.1.0",
   "description": "Search live flight prices, see the cheapest option first, and get notified when a watched route gets cheaper.",
   "icons": {
@@ -10,7 +10,7 @@
     "128": "icons/icon128.png"
   },
   "action": {
-    "default_title": "Flightyy - find the cheapest flight",
+    "default_title": "FlightBerry - find the cheapest flight",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
